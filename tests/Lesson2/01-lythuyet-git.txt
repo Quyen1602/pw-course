@@ -1,0 +1,43 @@
+1. Giải thích các câu lệnh 
+- Git init: Khởi tạo 1 repository
+- git add <file name>: thêm 1 file cụ thể vào vùng staging
+- Git add . : Thêm tất cả các file mới, file đã chỉnh sửa vào dùng staging 
+- Git commit -m "message" : Lưu trạng thái hiện tại của các file trong staging vào repository, kèm thông điệp mô tả.
+
+2. Bài tập suy luận vùng file
+Các vùng của Git:
+- **Working Directory**: Nơi bạn đang thao tác file thực tế.
+- **Staging Area**: Nơi chứa file đã `git add` để chuẩn bị commit.
+- **Repository (Local)**: Lịch sử commit đã lưu.
+
+a. Tạo 3 file: file 1, file 2, file 3
+- Working Directory: file1, file2, file3  
+- Staging Area: (trống)  
+- Repository: (trống)
+
+b. run git init
+- Working Directory: file1, file2, file3  
+- Staging Area: (trống)  
+- Repository: (trống)
+
+c. Chạy lệnh: git commit -m "init project"  
+- Không có file trong staging area ⇒ commit này không lưu gì.  
+- Working Directory: file1, file2, file3  
+- Staging Area: (trống)  
+- Repository: (trống)
+
+d. Chạy lệnh: git add file1  
+- Working Directory: file1, file2, file3  
+- Staging Area: file1  
+- Repository: (trống)
+
+e. Chạy lệnh: git commit -m "add file1"  
+- Working Directory: file1, file2, file3  
+- Staging Area: (trống)  
+- Repository: file1
+
+f. Chạy lệnh: git add file  
+- Lệnh này không hợp lệ nếu không chỉ rõ tên đầy đủ. Nếu ý là `git add file2`, thì:  
+  - Working Directory: file1, file2, file3  
+  - Staging Area: file2  
+  - Repository: file1
