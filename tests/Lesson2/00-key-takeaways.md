@@ -220,11 +220,5 @@ for (let i = 1; i < 8; i++) {
     console.log(i); 
 }
 ```
-##  Naming Conventions
-```js
-// snake_case_now_now: chưa dùng
-// kebab-case-now-now: tên file
-// camelCaseNowNow: tên biến
-// PascalCase: tên class
-```
+
 
