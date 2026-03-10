@@ -1,0 +1,52 @@
+Giải thích các câu lệnh Git:
+1. git commit --amend:
+    → Sửa commit gần nhất: thay message hoặc thêm file.
+2. git commit --amend -m "<message>":
+    → Sửa message của commit gần nhất.
+3. git restore --staged <file>:
+    → Bỏ file khỏi staging (trở về trạng thái working directory).
+4. git reset HEAD~1:
+    → Xóa commit gần nhất, giữ lại file trong working dir & staging.
+
+Mô phỏng folder lesson-3
+a. Tạo file1, file2, file3
+b. git init
+    → Repo khởi tạo, chưa có commit
+c. git commit -m "init project"
+    → Commit rỗng, chưa có file được add
+d. git add file1
+    → file1 vào staging
+e. git commit -m "add file"
+    → Commit chứa file1
+    → Commit 1: "add file"
+f. git add .
+    → file2, file3 vào staging
+g. git restore --staged file2
+    → file2 ra khỏi staging
+h. git commit -m "add all files"
+    → Chỉ file3 được commit
+    → Commit 2: "add all files"
+i. git reset HEAD~1
+    → Xóa commit chứa file3
+    → file3 quay lại Working Directory
+
+Kết quả cuối cùng:
+    Commit: file1
+    Staging: file3
+    Working dir: file2
+
+Mô phỏng folder lesson-3-git
+a. git init
+b. Tạo file1.txt, file2.txt, oops/file3.txt
+c. Tạo .gitignore với nội dung:
+        file1.txt
+        oops/
+d. git add .
+        → file1.txt và oops/file3.txt bị ignore
+        → Chỉ .gitignore và file2.txt được add
+e. git commit -m "init project"
+
+Kết quả cuối cùng:
+    Commit: .gitignore, file2.txt
+    Working dir (untracked): file1.txt, oops/file3.txt
+
